@@ -6,12 +6,26 @@ import (
 	"log"
 	"net/http"
 	"net"
+	"os"
+	"os/signal"
+	"syscall"
+	"time"
 
 	"golang.org/x/sync/errgroup"
 	"github.com/manaty226/go_todo_app/config"
 )
 
+func main() {
+	if err := run(context.Background()); err != nil {
+		log.Printf("failed to terminate server: %v", err)
+	}
+}
+
 func run(ctx context.Context) error {
+
+	ctx, stop := signal.NotifyContext(ctx, os.Interrupt, syscall.SIGTERM)
+	defer stop()
+
 	cfg, err := config.New()
 	if err != nil {
 		return err
@@ -25,6 +39,8 @@ func run(ctx context.Context) error {
 
 	s := &http.Server {
 		Handler: http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			fmt.Fprintf(w, "Hello, %s!", r.URL.Path[1:])
+			time.Sleep(5 * time.Second)
 			fmt.Fprintf(w, "Hello, %s!", r.URL.Path[1:])
 		}),
 	}
@@ -48,8 +64,3 @@ func run(ctx context.Context) error {
 	return eg.Wait()
 }
 
-func main() {
-	if err := run(context.Background()); err != nil {
-		log.Printf("failed to terminate server: %v", err)
-	}
-}
