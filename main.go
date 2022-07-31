@@ -6,7 +6,6 @@ import (
 	"log"
 	"net/http"
 	"net"
-	"os"
 
 	"golang.org/x/sync/errgroup"
 	"github.com/manaty226/go_todo_app/config"
