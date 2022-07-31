@@ -5,9 +5,6 @@ import (
 	"fmt"
 	"log"
 	"net"
-	"os"
-	"os/signal"
-	"syscall"
 
 	// "golang.org/x/sync/errgroup"
 	"github.com/manaty226/go_todo_app/config"
@@ -20,10 +17,6 @@ func main() {
 }
 
 func run(ctx context.Context) error {
-
-	ctx, stop := signal.NotifyContext(ctx, os.Interrupt, syscall.SIGTERM)
-	defer stop()
-
 	cfg, err := config.New()
 	if err != nil {
 		return err
