@@ -1,4 +1,8 @@
+github.com/budougumi0617/go_todo_app v1.0.1 h1:iYiUEqEpPj7TiACqLjgYVUsmGjQ/WmfV4NbRpnr1Bqo=
+github.com/budougumi0617/go_todo_app v1.0.1/go.mod h1:QwKZ8Ou8WKkvUfe5uNabPlZ2WrncFMwlxFr9hUjXp0Q=
 github.com/caarlos0/env/v6 v6.9.3 h1:Tyg69hoVXDnpO5Qvpsu8EoquarbPyQb+YwExWHP8wWU=
 github.com/caarlos0/env/v6 v6.9.3/go.mod h1:hvp/ryKXKipEkcuYjs9mI4bBCg+UI0Yhgm5Zu0ddvwc=
+github.com/manaty226/go_todo_app/config v0.0.0-20220731011304-46483aa1163e h1:NFK8BMg+rnPJht1hLvwutI+safmNakzYJW83m0r8JIY=
+github.com/manaty226/go_todo_app/config v0.0.0-20220731011304-46483aa1163e/go.mod h1:rhQuh+SnfcATkZJJA6N7TlBSvlo/iYJSON+6Vli8Aa4=
 golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4 h1:uVc8UZUe6tr40fFVnUP5Oj+veunVezqYl9z7DYw9xzw=
 golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4/go.mod h1:RxMgew5VJxzue5/jJTE5uejpjVlOe/izrB70Jof72aM=
