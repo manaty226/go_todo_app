@@ -2,6 +2,10 @@
 .DEFAULT_GOAL := help
 
 DOCKER_TAG := latest
+
+test:
+	go test -v ./...
+
 build:
 	docker build -t go-todo-app:${DOCKER_TAG} --target deploy .
 

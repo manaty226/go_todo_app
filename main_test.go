@@ -3,10 +3,10 @@ package main
 import (
 	"context"
 	"fmt"
-	"testing"
 	"io"
-	"net/http"
 	"net"
+	"net/http"
+	"testing"
 
 	"golang.org/x/sync/errgroup"
 )
