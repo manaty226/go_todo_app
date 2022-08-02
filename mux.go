@@ -9,9 +9,6 @@ import (
 	"github.com/go-playground/validator/v10"
 )
 
-func NewMuxCalc() {
-}
-
 func NewMux() http.Handler {
 	mux := chi.NewRouter()
 	mux.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
