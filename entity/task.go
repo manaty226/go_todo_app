@@ -2,7 +2,7 @@ package entity
 
 import "time"
 
-type taskID int64
+type TaskID int64
 type TaskStatus string
 
 const (
@@ -12,7 +12,7 @@ const (
 )
 
 type Task struct {
-	ID			taskID			`json:"id"`
+	ID			TaskID			`json:"id"`
 	Title		string			`json:"title"`
 	Status	TaskStatus	`json:"status"`
 	Created	time.Time		`json:"created"`
