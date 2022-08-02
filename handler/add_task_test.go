@@ -6,27 +6,27 @@ import (
 	"net/http/httptest"
 	"testing"
 
+	"github.com/go-playground/validator/v10"
 	"github.com/manaty226/go_todo_app/entity"
 	"github.com/manaty226/go_todo_app/store"
 	"github.com/manaty226/go_todo_app/testutil"
-	"github.com/go-playground/validator/v10"
 )
 
 func TestAddTask(t *testing.T) {
 	t.Parallel()
 	type want struct {
-		status	int
-		rspFile	string
+		status  int
+		rspFile string
 	}
 	tests := map[string]struct {
 		reqFile string
-		want		want
+		want    want
 	}{
 		"ok": {
 			reqFile: "testdata/add_task/ok_req.json.golden",
 			want: want{
-				status:		http.StatusOK,
-				rspFile:	"testdata/add_task/ok_rsp.json.golden",
+				status:  http.StatusOK,
+				rspFile: "testdata/add_task/ok_rsp.json.golden",
 			},
 		},
 		// "badRequest": {

@@ -13,8 +13,8 @@ var (
 )
 
 type TaskStore struct {
-	LastID	entity.TaskID
-	Tasks		map[entity.TaskID]*entity.Task
+	LastID entity.TaskID
+	Tasks  map[entity.TaskID]*entity.Task
 }
 
 func (ts *TaskStore) Add(t *entity.Task) (int, error) {
