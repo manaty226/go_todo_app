@@ -30,10 +30,10 @@ func TestAddTask(t *testing.T) {
 			},
 		},
 		"badRequest": {
-			reqFile:	"testdata/add_task/bad_req.json.golden",
-			want:	want{
-				status:	http.StatusBadRequest,
-				rspFile:	"testdata/add_task/bad_rsp.json.golden",
+			reqFile: "testdata/add_task/bad_req.json.golden",
+			want: want{
+				status:  http.StatusBadRequest,
+				rspFile: "testdata/add_task/bad_rsp.json.golden",
 			},
 		},
 	}
