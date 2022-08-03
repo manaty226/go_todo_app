@@ -2,7 +2,6 @@ package testutil
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"net/http"
 	"os"
@@ -21,7 +20,6 @@ func AssertJSON(t *testing.T, want, got []byte) {
 	if err := json.Unmarshal(got, &jg); err != nil {
 		t.Fatalf("cannot unmarshal got %q: %v", got, err)
 	}
-	fmt.Printf("\n %s \n %s \n", jg, jw)
 	if diff := cmp.Diff(jg, jw); diff != "" {
 		t.Errorf("got differs: (-got +want\n%s", diff)
 	}
