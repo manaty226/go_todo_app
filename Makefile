@@ -24,6 +24,9 @@ ps:
 test:
 	go test -race -shuffle=on ./...
 
+generate:
+	go generate ./...
+
 dry-migrate:
 	${HOME}/go/bin/mysqldef -u todo -p todo -h 127.0.0.1 -P 33306 todo --dry-run < ./_tools/mysql/schema.sql
 
