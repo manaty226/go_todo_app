@@ -1,16 +1,28 @@
 package main
 
 import (
+	"context"
 	"io"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/manaty226/go_todo_app/config"
 )
 
 func TestNewMux(t *testing.T) {
 	w := httptest.NewRecorder()
 	r := httptest.NewRequest(http.MethodGet, "/health", nil)
-	sut := NewMux()
+	ctx := context.Background()
+	cfg, err := config.New()
+	if err != nil {
+		t.Fatal("failed to initialize config.")
+	}
+	sut, cleanup, err := NewMux(ctx, cfg)
+	if err != nil {
+		cleanup()
+		t.Fatal("tailed to initialize mux")
+	}
 	sut.ServeHTTP(w, r)
 	resp := w.Result()
 	t.Cleanup(func() { _ = resp.Body.Close() })
