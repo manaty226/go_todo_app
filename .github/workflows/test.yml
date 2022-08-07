@@ -34,6 +34,6 @@ jobs:
         mysqldef -u todo -p todo -h 127.0.0.1 -P 3306 todo < ./_tools/mysql/schema.sql
     - run:  go test ./... -coverprofile=coverage.out
       env:
-        CI: "github_actions"
+        TODO_DB_PORT: 3306
     - name: report coverage
       uses: k1LoW/octocov-action@v0
