@@ -16,12 +16,12 @@ func TestNewMux(t *testing.T) {
 	ctx := context.Background()
 	cfg, err := config.New()
 	if err != nil {
-		t.Fatal("failed to initialize config.")
+		t.Fatal("failed to initialize config: %w", err)
 	}
 	sut, cleanup, err := NewMux(ctx, cfg)
 	if err != nil {
 		cleanup()
-		t.Fatal("tailed to initialize mux")
+		t.Fatal("tailed to initialize mux: %w", err)
 	}
 	sut.ServeHTTP(w, r)
 	resp := w.Result()
